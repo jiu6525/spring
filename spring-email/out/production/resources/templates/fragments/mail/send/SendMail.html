@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Mail</title>
+</head>
+<body>
+<h1>메일 보내기</h1>
+
+    <form th:action="@{/mail/send}" method="post" th:object="${MailDto}">
+        <table>
+            <tr>
+                <td>메일 주소</td>
+                <td>
+                    <input type="text" th:field="*{email}" placeholder="이메일 주소를 입력하세요">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" th:field="*{memberId}" placeholder="사용하시는 id를 입력하세요">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" th:field="*{phone}" placeholder="사용하시는 핸드폰 번호를 입력하세요 ex)01098765432">
+                </td>
+            </tr>
+        </table>
+        <button>발송</button>
+    </form>
+
+</body>
+</html>
